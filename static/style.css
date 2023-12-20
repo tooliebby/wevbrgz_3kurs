@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+
+main{
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+header{
+    margin-bottom: 30px;
+    padding: 20px;
+    background: lightblue;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+footer{
+    margin-top: 20px;
+    padding: 10px;
+    background: lightblue;
+    font-weight: bold;
+    text-align: right;
+    color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* .photo_eat{
+    height: 100px;
+    width: 100px;
+} */
+
+.for_dish{
+    border: 3px solid;
+    border-color: lightblue;
+    margin: 3px;
+}

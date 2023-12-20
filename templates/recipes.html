@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header>
+    <div class="header-container">
+        <div class="menu-items">
+            {% if username == 'Gritchin Georgiy' %}
+                <nav>
+                    <a href="/new_dish" class="button">Добавить рецепт</a>
+                    <a href="/edit_dish" class="button">Редактировать</a>
+                    <a href="/delete_dish" class="button">Удалить</a><br>
+                    <div style="margin-left: 2px; margin-top: 10px;">Выполнил: Гритчин Георгий</div>
+                </nav>
+            {% endif %}
+        </div>
+        <div class="user-info">
+            <div class="username">
+                {{ username }}
+            </div>
+            <div class="user-actions">
+                <a href="/logout" class="button">Выход</a>
+                <a href="/delete_account" class="button delete-account">Удалить аккаунт</a>
+            </div>
+        </div>
+    </div>
+</header>
+<h1 style="margin-left: 400px;">Рецепты</h1>
+<form class="searching" method="POST">
+    <div class="search-container">
+    <input type="text" placeholder="Введите название рецепта" name="name" class="search-container" style="flex: 1;  border: none; padding: 10px; outline: none;font-size: 16px;">
+    <button type="submit" class="search-button ">Найти</button>
+    </div>
+    <main>
+        <div class="card-container">
+            {% for i in all_recipes %}
+            <div class="card">
+                <h2 class="for_dish" style="margin-top: 0;">{{ i.name_dish }}</h2>
+                <div class="photo_eat"><img src="{{i.photo_link}}"></div>
+                <div class="for_dish" style="margin-bottom: 3px;">{{ i.ingridients }}</div>
+                <div class="for_dish">{{ i.steps }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
