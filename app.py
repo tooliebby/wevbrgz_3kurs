@@ -23,6 +23,11 @@ login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.init_app(app)
 
+@app.route('/')
+@app.route('/index')
+def start():
+    return redirect('/login', code=302)
+
 @login_manager.user_loader
 def load_users(user_id):
     return users.query.get(int(user_id))
