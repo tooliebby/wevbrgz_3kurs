@@ -13,25 +13,25 @@
                 </nav>
             {% endif %}
         </div>
-        <div class="user-info">
-            <div class="username">
+        <div>
+            <div>
                 {{ username }}
             </div>
-            <div class="user-actions">
+            <div>
                 <a href="/logout" class="button">Выход</a>
-                <a href="/delete_account" class="button delete-account">Удалить аккаунт</a>
+                <a href="/delete_account">Удалить аккаунт</a>
             </div>
         </div>
     </div>
 </header>
 <h1 style="margin-left: 400px;">Рецепты</h1>
 <form class="searching" method="POST">
-    <div class="search-container">
-    <input type="text" placeholder="Введите название рецепта" name="name" class="search-container" style="flex: 1;  border: none; padding: 10px; outline: none;font-size: 16px;">
-    <button type="submit" class="search-button ">Найти</button>
+    <div>
+    <input type="text" placeholder="Введите название рецепта" name="name"  style="flex: 1;  border: none; padding: 10px; outline: none;font-size: 16px;">
+    <button type="submit">Найти</button>
     </div>
     <main>
-        <div class="card-container">
+        <div>
             {% for i in all_recipes %}
             <div class="card">
                 <h2 class="for_dish" style="margin-top: 0;">{{ i.name_dish }}</h2>

@@ -4,7 +4,7 @@
 
 {% block main %}
 
-<form method="POST">
+<form class="form_for_login_register" method="POST">
     <h1>Страница регистрации</h1>
 
     <div>
@@ -17,7 +17,7 @@
     <label for="password">Пароль</label>
     </div>
     <button type="submit">Зарегистрироваться</button>
-    <div class="caption">Если у вас есть аккаунт <span><a href="/login">Войти в аккаунт</a></span></div>
+    <div>Если у вас есть аккаунт <span><a href="/login">Войти в аккаунт</a></span></div>
     <div class="errors"><span>{{ errors }}</span></div>
 </form>
 

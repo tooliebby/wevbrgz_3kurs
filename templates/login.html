@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block lab %}Лабораторная работа 5{% endblock %}
+{% block lab %}РГЗ{% endblock %}
 
 {% block main %}
-    <form method="POST">
+    <form class="form_for_login_register" method="POST">
         <h1>Страница входа</h1>
         <div><label for="username">Логин</label></div>
         <input type="text" name="username" placeholder="username">
@@ -11,7 +11,7 @@
         <input type="text" name="password" placeholder="password">
 
         <div><button type="submit">Войти</button></div>
-        <div class="caption">Если у вас не аккаунта <span><a href="/register">Зарегистрироваться</a></span></div>
+        <div>Если у вас не аккаунта <span><a href="/register">Зарегистрироваться</a></span></div>
         <div class="errors"><span>{{errors}}</span></div>
     </form>
 {% endblock %}
