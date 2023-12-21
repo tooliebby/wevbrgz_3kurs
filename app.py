@@ -139,3 +139,18 @@ def delete_account():
     db.session.delete(delUser)
     db.session.commit()
     return redirect("/login")
+
+@app.route("/delete_dish", methods = ['POST', 'GET'])
+def delete_dish():
+        my_recipes = recipes.query.all()
+        idRecipe= request.form.get("delete_dish")
+        if request.method == 'GET':
+            return render_template("delete_dish.html",
+                my_recipes = my_recipes
+            )
+        else:
+            delrecipe= recipes.query.filter_by(id=idRecipe).first()
+            db.session.delete(delrecipe)
+            db.session.commit()
+
+            return redirect("/recipes", code=302)

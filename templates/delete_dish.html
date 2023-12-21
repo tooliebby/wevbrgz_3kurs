@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header>
+    <div>
+        <div>
+            {% if username == 'Gritchin Georgiy' %}
+                <nav>
+                    <a href="/new_dish" class="button">Добавить рецепт</a>
+                    <a href="/edit_dish" class="button">Редактировать</a>
+                    <a href="/delete_dish" class="button">Удалить</a><br>
+                    <a href="/recipes"  style="margin-top: 10px;">Вернуться на главную</a><br>
+                    <div >Выполнил: Гритчин Георгий</div>
+                </nav>
+            {% endif %}
+        </div>
+        <div>
+            <div>
+                {{ username }}
+            </div>
+            <div>
+                <a href="/logout" class="button">Выход</a>
+                <a href="/delete_account" class="button delete-account">Удалить аккаунт</a>
+            </div>
+        </div>
+    </div>
+</header>
+<h1>Удаление рецептов</h1>
+<form method="POST">
+    <select name="delete_dish">
+        {% for i in my_recipes %}
+            <option style="text-align: center;" value="{{ i.id }}">{{ i.name_dish }}</option>
+        {% endfor %}   
+    </select>
+    <button type="submit">Удалить рецепт</button>
+    </div>
+</form>
+{% endblock %}
