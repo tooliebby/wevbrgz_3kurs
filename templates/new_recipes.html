@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header>
+    <div>
+        <div>
+            {% if username == 'Gritchin Georgiy' %}
+                <nav>
+                    <a href="/new_dish" class="button">Добавить рецепт</a>
+                    <a href="/edit_dish" class="button">Редактировать</a>
+                    <a href="/delete_dish" class="button">Удалить</a><br>
+                    <a href="/recipes" class="back" style="margin-top: 10px;">Вернуться на главную</a><br>
+                    <div style="margin-left: 2px; margin-top: 10px; font-size: 14px;">Выполнил: Гритчин Георгий</div>
+                </nav>
+            {% endif %}
+        </div>
+        <div class="user-info">
+            <div>
+                {{ username }}
+            </div>
+            <div class="user-actions">
+                <a href="/logout" class="button">Выход</a>
+                <a href="/delete_account" class="button delete-account">Удалить аккаунт</a>
+                <a href="/recipes">Назад к рецептам</a>
+            </div>
+        </div>
+    </div>
+</header>
+<h1 style="text-align: center;">Добавление рецептов</h1>
+<form method="POST">
+    
+    <input type="text" name="input_name_dish" placeholder="Напишите название рецепта" style="height: 28px;"><br>
+    <input type="text" name="input_ingridients" placeholder="Напишите ингридиенты" style="height: 28px;"><br>
+    <input type="text" name="input_steps" placeholder="Напишите шаги приготовления" style="height: 28px;"><br>
+    <input type="text" name="photo_link" placeholder="Вставьте ссылку на фотографию" style="height: 28px;"><br>
+    <span class="errors" style="margin-top: 100px;">{{errors}}</span>
+
+        <button type="submit" >Добавить рецепт</button>
+    </div>
+</form>
+{% endblock %}
